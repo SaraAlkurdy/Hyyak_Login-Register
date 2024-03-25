@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="./dist/output.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.min.css">
+</head>
+
+<body>
+  <div class="w-[100vw] min-h-[100vh] login flex items-center">
+    <div class="md:pr-36 md:py-11">
+      <form
+        class="bg-white w-[100vw] h-[100vh] md:w-[543px] shadow-greyBox rounded-md md:h-auto md:pb-[58px] px-11">
+        <img src="./assets/images/logo.png" class="w-[200px] md:w-[115px] md:m-0 md:pt-[66px] mx-auto block pt-40" alt="Hyyak"
+          title="Hyyak" />
+        <p class="mt-20 md:mt-11 text-lg text-greyBlack">تسجيل الدخول</p>
+        <p class="text-primary text-3xl mt-2.5 font-bold">في منصة حيَّاك</p>
+        <div class="mt-8">
+          <div class="radio-box flex items-center gap-6 mb-6">
+            <div class="form-check flex items-center gap-2">
+              <input class="form-check-input accent-primary w-5 h-5" type="radio" name="flexRadioDefault" id="email"
+                checked="" onchange="showContent('email')" />
+              <label class="form-check-label"> البريد الالكتروني </label>
+            </div>
+            <div class="form-check flex items-center gap-2">
+              <input class="form-check-input accent-primary w-5 h-5" type="radio" name="flexRadioDefault" id="phone"
+                onchange="showContent('phone')" />
+              <label class="form-check-label"> رقم الجوال </label>
+            </div>
+          </div>
+  
+          <div id="emailContent" style="display: block">
+            <!-- Content to display when "Email" is selected -->
+            <div class="flex items-start mt-3">
+              <p class="mb-2">البريد الالكتروني</p>
+              <img alt="required" class="ms-1" src="./assets/images/required.svg" />
+            </div>
+            <div class="h-14 relative">
+              <input
+                class="w-full h-full bg-gray1 placeholder:text-gray-300 px-4 rounded-md border border-[#E2E2E2] placeholder:text-sm"
+                type="email" #input placeholder="البريد الالكتروني" />
+            </div>
+          </div>
+  
+          <div id="phoneContent" style="display: none">
+            <!-- Content to display when "Phone" is selected -->
+            <div class="flex items-start mt-3">
+                <p class="mb-2">رقم الجوال</p>
+                <img alt="required" class="ms-1" src="./assets/images/required.svg" />
+            </div>
+            <div class="h-14" dir="ltr">
+                <input id="phoneInput" class="w-full h-full bg-gray1 placeholder:text-gray-300 ps-16 pe-4 rounded-md border border-[#E2E2E2] placeholder:text-sm" type="tel" placeholder="رقم الجوال" />
+            </div>
+        </div>
+        
+  
+          <!-- Recaptcha -->
+          <div class="mt-4">
+            <div class="flex items-start">
+              <p class="mb-2">الرمز المرئي</p>
+              <img alt="required" class="ms-1" src="./assets/images/required.svg" />
+            </div>
+            <div class="g-recaptcha" data-sitekey="6LcVXH4pAAAAAH8eyL7Ah1NnXmxvPqS9mT1UxB3K"></div>
+          </div>
+  
+          <!-- terms and conditions -->
+          <div class="flex items-center gap-2 my-4">
+            <input type="checkbox" id="checkbox" name="checkbox" class="form-check-input accent-primary w-5 h-5" />
+            <label for="checkbox">
+              اوافق على <span class="text-red-500 underline cursor-pointer">الشروط والأحكام</span>
+            </label>
+          </div>
+        </div>
+  
+        <!-- login button -->
+        <button
+          class="border-primary h-14 text-white active:border-primary active:bg-primary after:bg-primary hover:bg-primary focus:border-primary focus:bg-primary bg-primary w-full mx-auto mt-2 rounded-md block"
+          nz-button nzType="primary">
+          تسجيل الدخول
+        </button>
+  
+        <!-- register -->
+        <button class="mt-2 text-sm">
+          <span> ليس لديك حساب؟ </span>
+          <span class="text-secondary underline">تسجيل مستخدم جديد</span>
+        </button>
+      </form>
+    </div>
+  </div>
+  </div>
+  <script>
+    function showContent(type) {
+      if (type === "email") {
+        document.getElementById("emailContent").style.display = "block";
+        document.getElementById("phoneContent").style.display = "none";
+      } else if (type === "phone") {
+        document.getElementById("emailContent").style.display = "none";
+        document.getElementById("phoneContent").style.display = "block";
+      }
+    }
+
+    // Handle reCAPTCHA verification
+    function verifyCallback(response) {
+      if (response) {
+        // reCAPTCHA verified, proceed with form submission
+      } else {
+        // reCAPTCHA not verified, display error message or take appropriate action
+        console.error("reCAPTCHA verification failed");
+      }
+    }
+  </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/intlTelInput.min.js"></script>
+
+    <script>
+      var input = document.querySelector("#phoneInput");
+      window.intlTelInput(input, {
+          // Configurations, if any
+          initialCountry: "sa",
+          separateDialCode: true,
+          utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/utils.js"
+      });
+  </script>
+  
+</body>
+
+</html>

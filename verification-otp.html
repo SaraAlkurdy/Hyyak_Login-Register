@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body class=" bg-[#F2F5FC]">
+    <div
+  class="h-[100vh] w-[100vw] md:w-[589px] md:rounded-md md:shadow-greyBox md:h-auto bg-white md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:absolute md:left-1/2 md:top-1/2 md:pb-[44px]"
+>
+  <img
+    src="/assets/verification-icon.png"
+    class="mx-auto block pt-[74px]"
+    alt="verification"
+    title="verification-otp"
+  />
+  <p class="text-xl text-primary font-bold text-center mt-[51px]">
+    التحقق من حسابك
+  </p>
+  <p class="text-center mt-[35px]">
+    أدخل رمز التحقق المرسل الى الرقم 0533678588
+  </p>
+  <!-- (onInputChange)="onOtpChange($event)"   -->
+  <div class="w-[309px] mx-auto">
+    <!-- <ng-otp-input
+      [config]="{
+        length: 4,
+        inputClass: 'customInputOtp rtl:!mr-3 ltr:!ml-3'
+      }"
+    ></ng-otp-input> -->
+
+    <div class="w-full mt-3 flex justify-between">
+      <input class="customInputOtp" maxlength="1" />
+      <input class="customInputOtp" maxlength="1" />
+      <input class="customInputOtp" maxlength="1" />
+      <input class="customInputOtp" maxlength="1" />
+    </div>
+
+    <div class="flex justify-between items-center mt-[31px]">
+      <div class="flex items-center">
+        <p>لم تصل رسالة التحقق؟</p>
+        <button class="text-primary ms-2 text-sm" nz-button nzType="text">
+          <span class="underline"> إعادة إرسال</span>
+        </button>
+      </div>
+      <p>0:34</p>
+    </div>
+  </div>
+  <div class="w-11/12 mx-auto block mt-[88px]">
+    <button
+      class="border-secondary h-14 text-white active:border-secondary active:bg-secondary after:bg-secondary hover:bg-secondary focus:border-secondary focus:bg-secondary bg-secondary w-full mx-auto mt-8 rounded-md block"
+      nz-button
+      nzType="primary"
+    >
+      تحقق
+    </button>
+  </div>
+</div>
+  </body>
+</html>
+
+
+
+<!-- <div class="w-[100vw] h-[100vh] ">
+    <div
+      class="bg-white w-[100vw] h-[100vh] md:w-[543px] shadow-greyBox md:transform md:translate-y-[66px] md:-translate-x-[140px] rounded-md md:h-auto md:pb-[58px] px-11"
+    >
+      <img
+        src="/assets/logo.png"
+        class="w-[200px] md:w-[115px] md:m-0 md:pt-[66px] mx-auto block pt-40"
+        alt="Hyyak"
+        title="Hyyak"
+      />
+      <p class="mt-20 md:mt-[69px] text-lg text-greyBlack">تسجيل الدخول</p>
+      <p class="text-primary text-3xl mt-2.5 font-bold">في منصة حيَّاك</p>
+      <div class="mt-8 md:mt-11">
+         <div>
+          <div class="flex items-start">
+            <p class="mb-4 text-sm">رقم الجوال</p>
+            <img
+              alt="required"
+              class="ms-1"
+              src="/assets/required.svg"
+            />
+          </div>
+          <div class="h-14 relative">
+            <input
+              class="w-full h-full bg-gray1 placeholder:text-gray-300 ps-16 rounded-md border border-[#E2E2E2]  placeholder:text-sm"
+              #input
+              placeholder="رقم الجوال"
+            />
+            <p class=" absolute top-1/2 -translate-y-1/2 right-3  border-e pe-1">+966</p>
+          </div>
+        </div>
+
+        <button
+          class="border-secondary h-14 text-white active:border-secondary active:bg-secondary after:bg-secondary hover:bg-secondary focus:border-secondary focus:bg-secondary bg-secondary w-full mx-auto mt-8 md:mt-[81px] rounded-md block"
+          nz-button
+          nzType="primary"
+        >
+          تسجيل الدخول
+        </button>
+      </div>
+       <button class="text-center w-full mt-[26px] text-sm">
+        <span> ليس لديك حساب؟ </span>
+        <span class="text-secondary underline">تسجيل مستخدم جديد</span>
+      </button>
+    </div>
+  </div> -->

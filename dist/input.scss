@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+   
+}
+
+.login {
+    background-image: url("../assets/images/login-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Almarai", sans-serif;
+}
+
+.customInputOtp {
+    @apply rounded-md w-[65px] h-[65px] border border-secondary border-solid text-center;
+}
+
+.iti {
+   @apply w-full h-full;
+}
