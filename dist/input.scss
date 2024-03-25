@@ -3,21 +3,54 @@
 @tailwind utilities;
 
 body {
-   
+
 }
 
-.login {
-    background-image: url("../assets/images/login-bg.png");
+.login, .signup {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     font-family: "Almarai", sans-serif;
 }
+.login{
+    background-image: url("../assets/images/login-bg.png");
+}
+.signup{
+    background-image: url("../assets/images/login-host-bg.png");
+
+}
 
 .customInputOtp {
-    @apply rounded-md w-[65px] h-[65px] border border-secondary border-solid text-center;
+    @apply text-primary rounded-md w-[65px] h-[65px] border border-secondary border-solid text-center;
+    font-size: 24px;
+ &:focus{
+    background-color: #e8e9ed;
+ }
 }
 
 .iti {
    @apply w-full h-full;
+}
+.custom-input{
+    @apply w-full h-14 placeholder:text-gray-300 px-3 rounded-md border border-[#E2E2E2] placeholder:text-sm placeholder:text-start;
+}
+
+.language-select{
+    @apply  text-secondary border-solid border-2 w-[110px] h-[48px] rounded-lg p-2 hover:border-secondary active:border-secondary focus:border-secondary;
+       & > option{
+        padding: 2rem;
+       } 
+}
+
+.validation{
+    position: relative;
+    &::after{
+        content: "";
+        background: url("../assets/images/required.svg");
+        background-repeat: no-repeat;
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        transform: translate(50%,0%);
+    }
 }
